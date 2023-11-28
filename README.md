@@ -7,7 +7,7 @@ This Java project is designed to evaluate logical expressions defined in JSON fo
 
 ## Features
 
-- Parses JSON representations of logical expressions.
+- Parses JSON representations `condition.json` of logical expressions.
 - Evaluates if-else statements with support for binary and logical operators.
 
 
