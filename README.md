@@ -3,7 +3,21 @@
 
 ## Overview
 
-This Java project is designed to evaluate logical expressions defined in JSON format. It utilizes the Jackson library for JSON processing to convert JSON data into Java objects. The core functionality revolves around evaluating if-else statements based on the conditions specified in the JSON file.
+- This Java project is designed to evaluate logical expressions defined in JSON format.
+```agsl
+   if(a=="abc" && b>4)
+        then 
+            true
+   else
+        if(b<10)
+            then 
+                true
+   else 
+        false
+```
+- The logical expression, following an Abstract Syntax Tree (AST) reference, has been formatted into JSON and stored in a file named `condition.json`.
+- It utilizes the Jackson library for JSON processing to convert JSON data into Java objects. 
+- The core functionality revolves around evaluating if-else statements based on the conditions specified in the JSON file.
 
 ## Features
 
@@ -61,12 +75,31 @@ The project uses a specific JSON format to represent logical expressions. Here a
 ```
 
 ## Design and Data Structure
-The project consists of data structure :
 
-- IfStatement and Alternates: Represents an if-else statement.
-- Condition: Represents a condition in the if-else statement.
-- BinaryExpression and LogicalExpression: Handle the evaluation of binary and logical conditions.
-- Identifier and Literal: Represent parts of an expression.
+This project is composed of several key components that work together to represent and evaluate logical expressions typically found in programming languages:
+
+### IfStatement and Alternates
+
+- **IfStatement**: Represents an 'if' statement within a logical expression. It contains a condition that is evaluated to either true or false. Based on this evaluation, the `IfStatement` dictates the flow of logic, determining whether to execute the 'then-part' or the 'else-part' of the statement.
+- **Alternates**: These are the 'else-if' and 'else' components of an if-else statement structure. They are evaluated if the main `IfStatement` condition evaluates to false. This mechanism allows for chaining multiple if-else conditions together, with the last alternate often representing the final 'else' block, executed if all previous conditions are false.
+
+### Condition
+
+- Represents a single condition within an if-else statement. It might be a simple comparison (like checking if a variable equals a certain value) or a more complex expression involving multiple operands and operators, which are handled by `BinaryExpression` and `LogicalExpression`.
+
+### BinaryExpression and LogicalExpression
+
+- **BinaryExpression**: Manages conditions involving two operands with a binary operator, such as `a > b` or `a == b`. The operands can be variables, literals, or more complex expressions.
+- **LogicalExpression**: Handles logical operations that involve one or more conditions, typically using logical operators like AND (`&&`) and OR (`||`). An example could be an expression like `(a > b) && (c < d)`.
+
+### Identifier and Literal
+
+- **Identifier**: Typically a variable name or placeholder in an expression. For instance, in `a > 5`, 'a' is an identifier whose value is determined at runtime.
+- **Literal**: Represents constant values in expressions. Unlike identifiers, literals do not change. For example, in `a == 10`, '10' is a literal.
+
+### Summary
+
+These components provide a structured and hierarchical approach to parsing and understanding the logic defined in a given expression, enabling the representation and evaluation of complex logical expressions found in programming languages.
 
 ## Prerequisites
 
