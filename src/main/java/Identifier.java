@@ -3,22 +3,31 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Represents an identifier in an expression.
+ * An identifier typically refers to a variable name within the context of an expression.
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 class Identifier {
     private String name;
-    private String type;
 
-    public Object evaluate(Object value) {
-        // Implement logic to get the value of the variable by name and handle different types
-        if (name.equals("a") && "string".equals(type)) {
-            return (String) value;
-        } else if (name.equals("b") && "int".equals(type)) {
-            return (Integer) value;
+    /**
+     * Evaluates the identifier to its corresponding value.
+     * The method expects two possible variables 'a' and 'b', and returns their value based on the identifier's name.
+     *
+     * @param a The value associated with the identifier 'a'.
+     * @param b The value associated with the identifier 'b'.
+     * @return The value of the identifier, which can be either 'a' or 'b', or null if the identifier's name is neither.
+     */
+    public Object evaluate(Object a, Object b) {
+        if ("a".equals(name)) {
+            return a;
+        } else if ("b".equals(name)) {
+            return b;
         }
-        // Add more cases for other variables and types if needed
-        throw new IllegalArgumentException("Unknown variable or type: " + name + " (" + type + ")");
+        return null;
     }
 }

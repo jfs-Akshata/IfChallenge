@@ -1,5 +1,4 @@
 {
-  "type": "if",
   "condition": {
     "logicalExpression": {
       "operator": "&&",
@@ -42,7 +41,6 @@
   },
   "alternates": [
     {
-      "type": "if",
       "condition": {
         "binaryExpression": {
           "operator": "<",
@@ -60,13 +58,14 @@
       },
       "consequent": {
         "value": true
-      }
-    },
-    {
-      "type": "else",
-      "consequent": {
-        "value": true
-      }
+      },
+      "alternates": [
+        {
+          "consequent": {
+            "value": false
+          }
+        }
+      ]
     }
   ]
 }

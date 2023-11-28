@@ -3,32 +3,21 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
 
-
+/**
+ * The Main class of the application.
+ * This class is responsible for loading a JSON representation of an IfStatement,
+ * evaluating it, and printing the result.
+ */
 public class Main {
-
     public static void main(String[] args) throws FileNotFoundException, JsonProcessingException {
-
         ObjectMapper mapper = new ObjectMapper();
-
         try {
-
-            // JSON file to Java object
-
-            // JSON string to Java object
-            IfStatement staff2 = mapper.readValue(new File("a2.json"), IfStatement.class);
-            String prettyStaff1 = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(staff2);
-
-            System.out.println(prettyStaff1);
-
+            IfStatement ifStatement = mapper.readValue(new File("a2.json"), IfStatement.class);
+            boolean result = ifStatement.evaluate("abc", 5);
+            System.out.println("Result: " + result);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
-
-
-
     }
 }
