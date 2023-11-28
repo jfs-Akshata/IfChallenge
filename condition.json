@@ -1,0 +1,35 @@
+{
+  "type": "if",
+  "condition": {
+    "type": "and",
+    "variableConditions": [
+      {
+        "type": "equals",
+        "variable": "a",
+        "value": "abc"
+      },
+      {
+        "type": "greaterThan",
+        "variable": "b",
+        "value": 4
+      }
+    ]
+  },
+  "trueBranch": {
+    "type": "true"
+  },
+  "falseBranch": {
+    "type": "if",
+    "condition": {
+      "type": "lessThan",
+      "variable": "b",
+      "value": 10
+    },
+    "trueBranch": {
+      "type": "true"
+    },
+    "falseBranch": {
+      "type": "false"
+    }
+  }
+}
