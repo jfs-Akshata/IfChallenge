@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException, JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            IfStatement ifStatement = mapper.readValue(new File("a2.json"), IfStatement.class);
-            boolean result = ifStatement.evaluate("abc", 5);
+            IfStatement ifStatement = mapper.readValue(new File("condition.json"), IfStatement.class);
+            boolean result = ifStatement.evaluate("abca", 5);
             System.out.println("Result: " + result);
 
         } catch (IOException e) {
