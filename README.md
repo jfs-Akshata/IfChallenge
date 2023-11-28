@@ -63,11 +63,10 @@ The project uses a specific JSON format to represent logical expressions. Here a
 ## Design and Data Structure
 The project consists of data structure :
 
-- IfStatement: Represents an if-else statement.
+- IfStatement and Alternates: Represents an if-else statement.
 - Condition: Represents a condition in the if-else statement.
 - BinaryExpression and LogicalExpression: Handle the evaluation of binary and logical conditions.
 - Identifier and Literal: Represent parts of an expression.
-
 
 ## Prerequisites
 
@@ -116,6 +115,8 @@ To run this project, you need:
    ```agsl
       java Main
    ```
+   
+
 3. **View the Result**
 
    The evaluation result of your logical expression will be printed in the console.
