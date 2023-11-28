@@ -112,6 +112,10 @@ To run this project, you need:
     java -jar target/IfElse-1.0-SNAPSHOT.jar
     ```
 
+   Or compile .java `javac JavaFileName.java` file and run 
+   ```agsl
+      java Main
+   ```
 3. **View the Result**
 
    The evaluation result of your logical expression will be printed in the console.
