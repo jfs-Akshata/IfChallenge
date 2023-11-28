@@ -80,13 +80,13 @@ To run this project, you need:
 1. **Clone the Repository**
 
     ```
-    git clone [https://github.com/jfs-Akshata/IfChallenge.git]
+    git clone https://github.com/jfs-Akshata/IfChallenge.git
     ```
 
 2. **Navigate to the Project Directory**
 
     ```
-    cd [IfChallenge]
+    cd IfChallenge
     ```
 
 3. **Build the Project with Maven**
