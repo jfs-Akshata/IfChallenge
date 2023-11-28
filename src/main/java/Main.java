@@ -13,7 +13,7 @@ public class Main {
         ObjectMapper mapper = new ObjectMapper();
         try {
             IfStatement ifStatement = mapper.readValue(new File("condition.json"), IfStatement.class);
-            boolean result = ifStatement.evaluate("abca", 5);
+            boolean result = ifStatement.evaluate("abc", 2);
             System.out.println("Result: " + result);
 
         } catch (IOException e) {
