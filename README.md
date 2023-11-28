@@ -102,7 +102,7 @@ To run this project, you need:
 
 1. **Define Your Logical Expression**
 
-   Edit the `a2.json` file to define your logical expression. The file should be structured according to the expected JSON format for logical expressions.
+   Edit the `condition.json` file to define your logical expression. The file should be structured according to the expected JSON format for logical expressions.
 
 2. **Run the Application**
 
